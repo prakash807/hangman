@@ -14,10 +14,10 @@ while guessed != correct_word and guesses != 0: # While the full word has not ye
         continue
     for i in range(length):
         if letter_guess == correct_word[i]:
-            guessed_word = guessed_word[0:i] + correct_word[i] + guessed_word[i+1:length]
-    print(guessed)
-    guesses -= 1
-if guessed_word == correct_word:
-    print("You won!")
+            guessed_word = guessed_word[0:i] + correct_word[i] + guessed_word[i+1:length] # Update guessed_word with letters filled in if guessed
+    print(guessed_word) # Show player updated guessed_word
+    guesses -= 1 # Decrement guesses since a guess has been used
+if guessed_word == correct_word: # If player was able to guess all letters
+    print("You won!") # Display winner message
 else:
-    print("You lost!")
+    print("You lost!") # Display loser message
