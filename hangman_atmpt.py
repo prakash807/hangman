@@ -9,9 +9,9 @@ guessed_word = "_" * length # Initialize string showing which correct letters ha
 while guessed != correct_word and guesses != 0: # While the full word has not yet been guessed, and there are still guesses left
     letter_guess = input("Guess a letter: ")
     guessed_letters = []
-    if letter_guess in guessed_letters:
+    if letter_guess in guessed_letters: # If inputted letter has already previously been guessed
         print("You already guessed this.")
-        break
+        continue
     for i in range(length):
         if letter_guess == correct_word[i]:
             guessed_word = guessed_word[0:i] + correct_word[i] + guessed_word[i+1:length]
